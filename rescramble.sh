@@ -6,6 +6,7 @@ if [[ "$POLYVERSE_POLYMORPHIC_LINUX_KEY" != "" ]]; then \
   apk add curl && \
   curl https://repo.polyverse.io/config/alpine/v3.6/install | sh -s "$POLYVERSE_POLYMORPHIC_LINUX_KEY" && \
   apk update && \
+  apk upgrade && \
   apk info -q | xargs apk fix && \
   echo "Scrambling complete. Number of packages scrambled: " && \
   apk info | xargs apk policy | grep -i polyverse | wc -l && \
